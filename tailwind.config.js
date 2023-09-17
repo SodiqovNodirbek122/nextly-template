@@ -11,7 +11,17 @@ module.exports = {
   theme: {
     extend: {
       colors: {
-        trueGray: colors.neutral,
+        trueGray: {
+          100: "#CECDD6",
+          200: "#9F9FAC",
+          300: "#737386",
+          400: "#4B4C61",
+          500: "#363753",
+          600: "#363753",
+          700: "#363753",
+          800: "#363753",
+          900: "#363753",
+        },
         voltiva: {
           100: "#C7EFDA",
           200: "#91DDB6",

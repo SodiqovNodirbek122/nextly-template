@@ -21,6 +21,11 @@ function Team() {
       position: "PHP Backend Developer",
     },
     {
+      name: "Ibrohim ",
+      avatar: "/img/team/ibrohim flutter.jpg",
+      position: "Flutter Developer",
+    },
+    {
       name: "Ibrohimjon ",
       avatar: "/img/team/ibrohim bekend.jpeg",
       position: "PHP Backend Developer",
@@ -30,17 +35,15 @@ function Team() {
       avatar: "/img/team/nodirbek.jpeg",
       position: "Frontend Developer",
     },
-    {
-      name: "Ibrohim ",
-      avatar: "/img/team/ibrohim flutter.jpg",
-      position: "Flutter Developer",
-    },
   ]
   const settings = {
     dots: true,
     dotsClass: "slick-dots slick-thumb",
     infinite: true,
     speed: 500,
+    prevArrow: false,
+    nextArrow: false,
+    arrows: false,
     slidesToShow: 4,
     slidesToScroll: 1,
     responsive: [
@@ -69,7 +72,7 @@ function Team() {
     ],
   }
   return (
-    <section className="bg-white dark:bg-gray-900">
+    <section className="bg-white dark:bg-trueGray-900">
       <div className="py-8 px-4 mx-auto max-w-screen-xl text-center lg:py-16 lg:px-6">
         <div className="mx-auto mb-8 max-w-screen-sm lg:mb-16">
           <h2 className="max-w-2xl mt-3 text-3xl font-bold leading-snug tracking-tight text-voltiva-800 lg:leading-tight lg:text-4xl dark:text-white">

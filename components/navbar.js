@@ -2,9 +2,11 @@ import Link from "next/link"
 import ThemeChanger from "./DarkSwitch"
 import Image from "next/image"
 import { Disclosure } from "@headlessui/react"
+import { useTheme } from "next-themes"
 
 const Navbar = () => {
   const navigation = ["About", "Features", "Team", "Company", "Partners"]
+  const { theme, setTheme } = useTheme()
 
   return (
     <div className="w-full">
@@ -16,7 +18,9 @@ const Navbar = () => {
               <div className="flex flex-wrap items-center justify-between w-full lg:w-auto">
                 <Link href="/">
                   <Image
-                    src="/img/voltiva.svg"
+                    src={`/img/${
+                      theme === "dark" ? "logo-dark" : "voltiva"
+                    }.svg`}
                     alt="N"
                     width="100"
                     height="50"

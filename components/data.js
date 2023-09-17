@@ -5,10 +5,10 @@ import {
   DevicePhoneMobileIcon,
   AdjustmentsHorizontalIcon,
   SunIcon,
-} from "@heroicons/react/24/solid";
+} from "@heroicons/react/24/solid"
 
-import benefitOneImg from "../public/img/benefit-one.png";
-import benefitTwoImg from "../public/img/benefit-two.png";
+import benefitOneImg from "../public/img/charging.svg"
+import benefitTwoImg from "../public/img/city-driver.svg"
 
 const benefitOne = {
   title: "Highlight your benefits",
@@ -31,7 +31,7 @@ const benefitOne = {
       icon: <CursorArrowRaysIcon />,
     },
   ],
-};
+}
 
 const benefitTwo = {
   title: "Offer more benefits here",
@@ -54,7 +54,6 @@ const benefitTwo = {
       icon: <SunIcon />,
     },
   ],
-};
+}
 
-
-export {benefitOne, benefitTwo};
+export { benefitOne, benefitTwo }

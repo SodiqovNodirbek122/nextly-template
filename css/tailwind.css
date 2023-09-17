@@ -8,3 +8,8 @@
     @apply dark:bg-trueGray-900;
   }
 }
+
+.slick-dots li button:before {
+  font-size: 18px !important;
+  color: #12b76a !important;
+}

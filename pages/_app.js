@@ -12,6 +12,7 @@ function MyApp({ Component, pageProps }) {
       var x = document.getElementsByTagName("script")[0]
       x.parentNode.insertBefore(s, x)
     })("https://widget.replain.cc/dist/client.js")
+    window.scrollTo(0, 0)
   }, [])
   return (
     <ThemeProvider attribute="class">

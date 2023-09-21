@@ -2,19 +2,20 @@ import Head from "next/head"
 import Hero from "../components/hero"
 import Navbar from "../components/navbar"
 import SectionTitle from "../components/sectionTitle"
+import { serverSideTranslations } from "next-i18next/serverSideTranslations"
 
 import { benefitOne, benefitTwo } from "../components/data"
 import Video from "../components/video"
 import Benefits from "../components/benefits"
 import Footer from "../components/footer"
-import Testimonials from "../components/testimonials"
-import Cta from "../components/cta"
-import Faq from "../components/faq"
 import Team from "../components/team"
 import Timeline from "../components/Timeline"
 import ContactForm from "../components/ContactForm"
+import { useTranslation } from "next-i18next"
 
 const Home = () => {
+  const { t } = useTranslation("common")
+
   return (
     <>
       <Head>
@@ -32,7 +33,7 @@ const Home = () => {
       <Navbar />
       <Hero />
       <div id="About">
-        <SectionTitle title=" About our Project">
+        <SectionTitle title={t("download")}>
           VOLTIVA is an online platform and mobile application that serves as an
           aggregator for electric vehicle (EV) charging stations. Our platform
           will provide EV drivers with a seamless and user-friendly experience
@@ -57,20 +58,20 @@ const Home = () => {
       <div id="Team">
         <Team />
       </div>
-      <SectionTitle title="Here's what our customers said">
+      {/* <SectionTitle title="Here's what our customers said">
         Testimonails is a great way to increase the brand trust and awareness.
         Use this section to highlight your popular customers.
       </SectionTitle>
-      <Testimonials />
+      <Testimonials /> */}
 
       <SectionTitle title="Our features">
         <Timeline />
       </SectionTitle>
-      <SectionTitle title="Frequently Asked Questions">
+      {/* <SectionTitle title="Frequently Asked Questions">
         Answer your customers possible questions here, it will increase the
         conversion rate as well as support or chat requests.
       </SectionTitle>
-      <Faq />
+      <Faq /> */}
       <ContactForm />
       {/* <Cta /> */}
       <Footer />
@@ -79,3 +80,10 @@ const Home = () => {
 }
 
 export default Home
+export async function getStaticProps({ locale }) {
+  return {
+    props: {
+      ...(await serverSideTranslations(locale, ["common"])),
+    },
+  }
+}

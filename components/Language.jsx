@@ -36,25 +36,24 @@ function Language() {
       </div>
       {langToggle && (
         <ul className="z-50  absolute top-full sm:left-0 bg-white shadow ">
-          {languages &&
-            languages?.map((language, index) => (
-              <li
-                key={index}
-                onClick={() => changeLanguage(language.code)}
-                className={`${
-                  router.locale === language.code
-                    ? "bg-customYellow text-voltiva-500"
-                    : "bg-customGrey-hover text-gray-500 text-customBlue1-hover"
-                } cursor-pointer text-sm p-1.5 sm:px-2 border-b flex flex-row justify-between items-center `}
-              >
-                {/* <img
+          {languages?.map((language, index) => (
+            <li
+              key={index}
+              onClick={() => changeLanguage(language.code)}
+              className={`${
+                router.locale === language.code
+                  ? "bg-customYellow text-voltiva-500"
+                  : "bg-customGrey-hover text-gray-500 text-customBlue1-hover"
+              } cursor-pointer text-sm p-1.5 sm:px-2 border-b flex flex-row justify-between items-center `}
+            >
+              {/* <img
                     className="sm:w-7 w-5 sm:h-5 h-4 object-cover sm:rounded-lg mr-1"
                     src={`/${language.code}.svg`}
                     alt=""
                   /> */}
-                <span>{language.code}</span>
-              </li>
-            ))}
+              <span>{language.code}</span>
+            </li>
+          ))}
         </ul>
       )}
     </div>

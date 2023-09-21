@@ -2,6 +2,7 @@ import Head from "next/head"
 import Hero from "../components/hero"
 import Navbar from "../components/navbar"
 import SectionTitle from "../components/sectionTitle"
+import { serverSideTranslations } from "next-i18next/serverSideTranslations"
 
 import { benefitOne, benefitTwo } from "../components/data"
 import Video from "../components/video"
@@ -13,8 +14,11 @@ import Faq from "../components/faq"
 import Team from "../components/team"
 import Timeline from "../components/Timeline"
 import ContactForm from "../components/ContactForm"
+import { useTranslation } from "next-i18next"
 
 const Home = () => {
+  const { t } = useTranslation("common")
+
   return (
     <>
       <Head>
@@ -32,7 +36,7 @@ const Home = () => {
       <Navbar />
       <Hero />
       <div id="About">
-        <SectionTitle title=" About our Project">
+        <SectionTitle title={t("download")}>
           VOLTIVA is an online platform and mobile application that serves as an
           aggregator for electric vehicle (EV) charging stations. Our platform
           will provide EV drivers with a seamless and user-friendly experience
@@ -79,3 +83,10 @@ const Home = () => {
 }
 
 export default Home
+export async function getStaticProps({ locale }) {
+  return {
+    props: {
+      ...(await serverSideTranslations(locale, ["common"])),
+    },
+  }
+}

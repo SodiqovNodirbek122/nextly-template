@@ -1,6 +1,7 @@
 import { ThemeProvider } from "next-themes"
 import "../css/tailwind.css"
 import { useEffect } from "react"
+import { appWithTranslation } from "next-i18next"
 
 function MyApp({ Component, pageProps }) {
   useEffect(() => {
@@ -20,5 +21,4 @@ function MyApp({ Component, pageProps }) {
     </ThemeProvider>
   )
 }
-
-export default MyApp
+export default appWithTranslation(MyApp)

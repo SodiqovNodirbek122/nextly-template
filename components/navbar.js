@@ -10,7 +10,7 @@ const Navbar = () => {
   const { theme, setTheme } = useTheme()
 
   return (
-    <div className="w-full sticky bg-white top-0 z-[99999]">
+    <div className="w-full sticky bg-white dark:bg-trueGray-600 top-0 z-[99999]">
       <nav className="container relative flex flex-wrap items-center justify-between p-8 mx-auto lg:justify-between xl:px-0">
         {/* Logo  */}
         <Disclosure>

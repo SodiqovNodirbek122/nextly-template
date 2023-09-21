@@ -2,10 +2,13 @@ import Link from "next/link"
 import Image from "next/image"
 import React from "react"
 import Container from "./container"
+import { useTheme } from "@emotion/react"
 
 export default function Footer() {
   const navigation = ["Product", "Features", "Pricing", "Company", "Blog"]
   const legal = ["Terms", "Privacy", "Legal"]
+  const { theme, setTheme } = useTheme()
+
   return (
     <div className="relative">
       <Container>
@@ -18,10 +21,10 @@ export default function Footer() {
                 className="flex items-center space-x-2 text-2xl font-medium text-voltiva-500 dark:text-gray-100"
               >
                 <Image
-                  src="/img/voltiva.svg"
+                  src={`/img/${theme === "dark" ? "logo-dark" : "voltiva"}.svg`}
                   alt="N"
-                  width="32"
-                  height="32"
+                  width="100"
+                  height="50"
                   className="w-28"
                 />
               </Link>

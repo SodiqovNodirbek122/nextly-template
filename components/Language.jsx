@@ -20,7 +20,7 @@ function Language() {
   }
   return (
     <div
-      className="relative"
+      className="relative "
       onClick={() => setLangToggle(!langToggle)}
       onMouseEnter={() => setLangToggle(!langToggle)}
       onMouseLeave={() => setLangToggle(false)}
@@ -30,12 +30,12 @@ function Language() {
           "flex items-center relative text-voltiva-500  cursor-pointer"
         }
       >
-        <span className="ml-1 sm:font-bold uppercase sm:text-lg text-xs">
+        <span className="ml-1 sm:font-bold uppercase sm:text-base text-xs">
           {router.locale}
         </span>
       </div>
       {langToggle && (
-        <ul className="z-50  absolute top-full sm:left-0 bg-white shadow-catalog sm:w-16 w-12">
+        <ul className="z-50  absolute top-full sm:left-0 bg-white shadow ">
           {languages &&
             languages?.map((language, index) => (
               <li
@@ -45,7 +45,7 @@ function Language() {
                   router.locale === language.code
                     ? "bg-customYellow text-voltiva-500"
                     : "bg-customGrey-hover text-gray-500 text-customBlue1-hover"
-                } cursor-pointer text-xs p-1.5 sm:px-2 flex flex-row justify-between items-center `}
+                } cursor-pointer text-sm p-1.5 sm:px-2 border-b flex flex-row justify-between items-center `}
               >
                 {/* <img
                     className="sm:w-7 w-5 sm:h-5 h-4 object-cover sm:rounded-lg mr-1"

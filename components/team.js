@@ -6,32 +6,32 @@ import "slick-carousel/slick/slick-theme.css"
 function Team() {
   const team = [
     {
-      name: "Azizbek aka",
+      name: "Azizbek Daminov",
       avatar: "/img/team/aziz aka.jpeg",
       position: "CEO/Co-founder",
     },
     {
-      name: "Begzod aka",
+      name: "Begzod Erkinov",
       avatar: "/img/team/begzod aka.jpeg",
       position: "PHP Backend Developer",
     },
     {
-      name: "Ali aka",
+      name: "Ali Muxtorov",
       avatar: "/img/team/ali aka.jpeg",
       position: "PHP Backend Developer",
     },
     {
-      name: "Ibrohim ",
+      name: "Ibrohim Sobirov",
       avatar: "/img/team/ibrohim flutter.jpg",
       position: "Flutter Developer",
     },
     {
-      name: "Ibrohimjon ",
+      name: "Ibrohim Sa'dullayev ",
       avatar: "/img/team/ibrohim bekend.jpeg",
       position: "PHP Backend Developer",
     },
     {
-      name: "Nodirbek Sodiqov ",
+      name: "Nodirbek Sodiqov",
       avatar: "/img/team/nodirbek.jpeg",
       position: "Frontend Developer",
     },

@@ -3,13 +3,14 @@ import ThemeChanger from "./DarkSwitch"
 import Image from "next/image"
 import { Disclosure } from "@headlessui/react"
 import { useTheme } from "next-themes"
+import Language from "./Language"
 
 const Navbar = () => {
   const navigation = ["About", "Features", "Team", "Company", "Partners"]
   const { theme, setTheme } = useTheme()
 
   return (
-    <div className="w-full">
+    <div className="w-full sticky bg-white top-0 z-[99999]">
       <nav className="container relative flex flex-wrap items-center justify-between p-8 mx-auto lg:justify-between xl:px-0">
         {/* Logo  */}
         <Disclosure>
@@ -89,6 +90,7 @@ const Navbar = () => {
 
         <div className="hidden mr-3 space-x-4 lg:flex nav__item">
           <ThemeChanger />
+          <Language />
         </div>
       </nav>
     </div>

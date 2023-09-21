@@ -13,3 +13,6 @@
   font-size: 18px !important;
   color: #12b76a !important;
 }
+*{
+  scroll-behavior: smooth;
+}

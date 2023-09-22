@@ -1,11 +1,11 @@
-import Image from "next/image";
-import Container from "./container";
-import heroImg from "../public/img/rafiki.svg";
-import Language from "./Language";
-import { useTranslation } from "react-i18next"; // Import the useTranslation hook
+import Image from "next/image"
+import Container from "./container"
+import heroImg from "../public/img/rafiki.svg"
+import Language from "./Language"
+import { useTranslation } from "react-i18next" // Import the useTranslation hook
 
 const Hero = () => {
-  const { t } = useTranslation("common");
+  const { t } = useTranslation("common")
 
   return (
     <>
@@ -32,17 +32,16 @@ const Hero = () => {
           </div>
         </div>
       </Container>
-      <Language />
     </>
-  );
-};
+  )
+}
 
-export default Hero;
+export default Hero
 
 export async function getStaticProps({ locale }) {
   return {
     props: {
       ...(await serverSideTranslations(locale, ["common"])),
     },
-  };
+  }
 }

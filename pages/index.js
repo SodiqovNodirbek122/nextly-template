@@ -3,9 +3,6 @@ import Hero from "../components/hero"
 import Navbar from "../components/navbar"
 import SectionTitle from "../components/sectionTitle"
 import { serverSideTranslations } from "next-i18next/serverSideTranslations"
-import { benefitOne, benefitTwo } from "../components/data"
-import Video from "../components/video"
-import Benefits from "../components/benefits"
 import Footer from "../components/footer"
 import Team from "../components/team"
 import Timeline from "../components/Timeline"
@@ -31,38 +28,19 @@ const Home = () => {
 
       <Navbar />
       <Hero />
-      <div id="#About">
-        <SectionTitle title={t("hometitle")}>
-          {t("hometext")}
-        </SectionTitle>
+      <div id="about">
+        <SectionTitle title={t("hometitle")}>{t("hometext")}</SectionTitle>
       </div>
-      <Benefits data={benefitOne} />
-      <Benefits imgPos="right" data={benefitTwo} />
-      <SectionTitle title="Learn how to fullfil your needs">
-        This section is to highlight a promo or demo video of your product.
-        Analysts says a landing page with video has 3% more conversion rate. So,
-        don&apos;t forget to add one. Just like this.
-      </SectionTitle>
-      <Video />
+
       <div id="Team">
         <Team />
       </div>
-      {/* <SectionTitle title="Here's what our customers said">
-        Testimonails is a great way to increase the brand trust and awareness.
-        Use this section to highlight your popular customers.
-      </SectionTitle>
-      <Testimonials /> */}
 
       <SectionTitle title="Our features">
         <Timeline />
       </SectionTitle>
-      {/* <SectionTitle title="Frequently Asked Questions">
-        Answer your customers possible questions here, it will increase the
-        conversion rate as well as support or chat requests.
-      </SectionTitle>
-      <Faq /> */}
+
       <ContactForm />
-      {/* <Cta /> */}
       <Footer />
     </>
   )

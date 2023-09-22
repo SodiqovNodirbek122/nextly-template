@@ -6,14 +6,7 @@ function Language() {
   const [langToggle, setLangToggle] = useState(false)
   const languages = [{ code: "en" }, { code: "ru" }, { code: "uz" }]
   const changeLanguage = async (lang) => {
-    //  try {
-    //    await requests.app.changeLanguage({
-    //      locale: lang,
-    //      ...(isLogged && { user_id: user?.id }),
-    //    })
-    //  } catch (error) {
-    //    console.log(error)
-    //  }
+   
     router.push(router.asPath, router.asPath, { locale: lang })
     //  Cookies.set("NEXT_LOCALE", lang, { expires: 3 })
     // save lang to cookie

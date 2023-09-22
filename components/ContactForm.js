@@ -1,6 +1,7 @@
 import React, { useState } from "react"
-
+import { useTranslation } from "react-i18next" 
 function ContactForm() {
+  const { t } = useTranslation("common")
   const initData = {
     name: "",
     phone: "",
@@ -9,6 +10,7 @@ function ContactForm() {
   }
   const [formData, setFormData] = useState(initData)
   const [loading, setLoading] = useState(false)
+  
 
   const onChange = (e) => {
     const { name, value } = e.target
@@ -45,7 +47,7 @@ function ContactForm() {
           <div className="flex flex-col justify-between">
             <div>
               <h2 className="text-4xl lg:text-5xl font-bold leading-tight">
-                Давайте поговорим обо всем!
+                {t("contacttitle")}
               </h2>
             </div>
             <div className="mt-8 text-center">
@@ -1017,7 +1019,7 @@ function ContactForm() {
             )}
             <div>
               <span className="uppercase text-sm text-gray-600 font-bold">
-                ФИО
+                {t("contactitem1")}
               </span>
               <input
                 className="w-full bg- text-gray-900 mt-2 p-3 rounded-lg focus:outline-none focus:shadow-outline"
@@ -1031,7 +1033,7 @@ function ContactForm() {
             </div>
             <div className="mt-8">
               <span className="uppercase text-sm text-gray-600 font-bold">
-                Телефон
+                {t("contactitem2")}
               </span>
               <input
                 className="w-full bg- text-gray-900 mt-2 p-3 rounded-lg focus:outline-none focus:shadow-outline"
@@ -1044,7 +1046,7 @@ function ContactForm() {
             </div>
             <div className="mt-8">
               <span className="uppercase text-sm text-gray-600 font-bold">
-                Сообщение
+                {t("contactitem3")}
               </span>
               <textarea
                 className="w-full h-32 bg-300 text-gray-900 mt-2 p-3 rounded-lg focus:outline-none focus:shadow-outline"
@@ -1059,7 +1061,7 @@ function ContactForm() {
                 type="submit"
                 className="uppercase text-sm font-bold tracking-wide bg-voltiva-600 text-gray-100 p-3 rounded-lg w-full focus:outline-none focus:shadow-outline"
               >
-                Отправить сообщение
+                {t("contactitem4")}
               </button>
             </div>
           </form>
@@ -1070,3 +1072,10 @@ function ContactForm() {
 }
 
 export default ContactForm
+export async function getStaticProps({ locale }) {
+  return {
+    props: {
+      ...(await serverSideTranslations(locale, ["common"])),
+    },
+  }
+}

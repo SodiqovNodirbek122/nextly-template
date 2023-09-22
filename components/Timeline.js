@@ -1,6 +1,8 @@
 import React from "react"
+import { useTranslation } from "next-i18next"
 
 function Timeline() {
+  const { t } = useTranslation("common")    
   return (
     <ol className="items-center sm:flex !text-left">
       <li className="relative mb-6 sm:mb-0">
@@ -89,3 +91,11 @@ function Timeline() {
 }
 
 export default Timeline
+export async function getStaticProps({ locale }) {
+  return {
+    props: {
+      ...(await serverSideTranslations(locale, ["common"])),
+    },
+  }
+}
+

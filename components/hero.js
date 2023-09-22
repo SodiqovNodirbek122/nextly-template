@@ -1,12 +1,10 @@
 import Image from "next/image"
 import Container from "./container"
 import heroImg from "../public/img/rafiki.svg"
-import Language from "./Language"
 import { useTranslation } from "react-i18next" // Import the useTranslation hook
 
 const Hero = () => {
   const { t } = useTranslation("common")
-
   return (
     <>
       <Container className="flex flex-wrap ">

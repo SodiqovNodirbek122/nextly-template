@@ -3,11 +3,13 @@ import Image from "next/image"
 import React from "react"
 import Container from "./container"
 import { useTheme } from "@emotion/react"
+import { useTranslation } from "react-i18next"
 
 export default function Footer() {
-  const navigation = ["Product", "Features", "Pricing", "Company", "Blog"]
-  const legal = ["Terms", "Privacy", "Legal"]
+  const navigation = ["home","about","team", ]
+  const navigation2 = ["features", "contact", "partners"]
   const { theme, setTheme } = useTheme()
+  const { t } = useTranslation("common")
 
   return (
     <div className="relative">
@@ -31,11 +33,7 @@ export default function Footer() {
             </div>
 
             <div className="max-w-md mt-4 text-gray-500 dark:text-gray-400">
-              VOLTIVA is an online platform and mobile application that serves
-              as an aggregator for electric vehicle (EV) charging stations. Our
-              platform will provide EV drivers with a seamless and user-friendly
-              experience to locate, access, and pay for charging services across
-              a wide network of both public and private charging stations.
+              {t("footertext")}
             </div>
           </div>
 
@@ -44,23 +42,23 @@ export default function Footer() {
               {navigation.map((item, index) => (
                 <Link
                   key={index}
-                  href="/"
+                  href={`#${item}`}
                   className="w-full px-4 py-2 text-gray-500 rounded-md dark:text-gray-300 hover:text-voltiva-500 focus:text-voltiva-500 focus:bg-voltiva-100 focus:outline-none dark:focus:bg-trueGray-700"
                 >
-                  {item}
+                  {t(item)}
                 </Link>
               ))}
             </div>
           </div>
           <div>
             <div className="flex flex-wrap w-full -mt-2 -ml-3 lg:ml-0">
-              {legal.map((item, index) => (
+              {navigation2.map((item, index) => (
                 <Link
                   key={index}
-                  href="/"
+                  href={`#${item}`}
                   className="w-full px-4 py-2 text-gray-500 rounded-md dark:text-gray-300 hover:text-voltiva-500 focus:text-voltiva-500 focus:bg-voltiva-100 focus:outline-none dark:focus:bg-trueGray-700"
                 >
-                  {item}
+                  {t(item)}
                 </Link>
               ))}
             </div>
@@ -159,3 +157,10 @@ const Linkedin = ({ size = 24 }) => (
     <path d="M22.23 0H1.77C.8 0 0 .77 0 1.72v20.56C0 23.23.8 24 1.77 24h20.46c.98 0 1.77-.77 1.77-1.72V1.72C24 .77 23.2 0 22.23 0zM7.27 20.1H3.65V9.24h3.62V20.1zM5.47 7.76h-.03c-1.22 0-2-.83-2-1.87 0-1.06.8-1.87 2.05-1.87 1.24 0 2 .8 2.02 1.87 0 1.04-.78 1.87-2.05 1.87zM20.34 20.1h-3.63v-5.8c0-1.45-.52-2.45-1.83-2.45-1 0-1.6.67-1.87 1.32-.1.23-.11.55-.11.88v6.05H9.28s.05-9.82 0-10.84h3.63v1.54a3.6 3.6 0 0 1 3.26-1.8c2.39 0 4.18 1.56 4.18 4.89v6.21z" />
   </svg>
 )
+export async function getStaticProps({ locale }) {
+  return {
+    props: {
+      ...(await serverSideTranslations(locale, ["common"])),
+    },
+  }
+}

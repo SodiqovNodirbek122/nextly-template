@@ -6,8 +6,8 @@ import { useTheme } from "@emotion/react"
 import { useTranslation } from "react-i18next"
 
 export default function Footer() {
-  const navigation = ["home","about","team", ]
-  const navigation2 = ["features", "contact", "partners"]
+  const navigation = ["about","for e.v","for ch.s","team", ]
+  const navigation2 = [ "for inestor","features", "contact",]
   const { theme, setTheme } = useTheme()
   const { t } = useTranslation("common")
 

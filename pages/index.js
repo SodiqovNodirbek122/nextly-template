@@ -1,5 +1,3 @@
-
-import Hero from "../components/hero"
 import Navbar from "../components/navbar"
 import SectionTitle from "../components/sectionTitle"
 import { serverSideTranslations } from "next-i18next/serverSideTranslations"
@@ -8,6 +6,7 @@ import Team from "../components/team"
 import Timeline from "../components/Timeline"
 import ContactForm from "../components/ContactForm"
 import { useTranslation } from "next-i18next"
+import Head from "../components/head"
 
 const Home = () => {
   
@@ -15,14 +14,22 @@ const Home = () => {
 
   return (
     <>
-   
-
       <Navbar />
-      <div id="home">
-      <Hero />
-      </div>
+
+      <Head/>
+
       <div id="about">
-        <SectionTitle title={t("hometitle")}>{t("hometext")}</SectionTitle>
+        <SectionTitle title={t("abouttitle")}>{t("abouttext")}</SectionTitle>
+      </div>
+      
+      <div id="for e.v">
+        <SectionTitle title={t("for e.v title")}>{t("for e.v text")}</SectionTitle>
+      </div>
+      <div id="for ch.s">
+        <SectionTitle title={t("for ch.s title")}>{t("for ch.s text")}</SectionTitle>
+      </div>
+      <div id="for inestor">
+        <SectionTitle title={t("for inestor title")}>{t("for inestor text")}</SectionTitle>
       </div>
 
       <div id="team">
@@ -34,9 +41,11 @@ const Home = () => {
         <Timeline />
         </div>
       </SectionTitle>
+
       <div id="contact">
       <ContactForm />
       </div>
+
       <Footer />
     </>
   )

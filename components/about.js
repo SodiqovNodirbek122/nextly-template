@@ -12,7 +12,7 @@ const About = () => {
         />
       </div>
       <div className="col-span-2 ">
-        <p className="text-lg text-gray-800 dark:text-white bg-red-400">
+        <p className="text-lg text-gray-800 dark:text-white">
           
           {t("abouttext")}
         </p>

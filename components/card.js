@@ -8,7 +8,7 @@ const Card = () => {
     <div className="grid grid-cols-2 gap-4">
       
       <div>
-        <p className="text-lg text-gray-800 dark:text-white bg-red-400">
+        <p className="text-lg text-gray-800 dark:text-white ">
           
         {t("for e.v text")}
         </p>
@@ -32,7 +32,7 @@ const Card = () => {
         />
       </div>
       <div>
-        <p className="text-lg text-gray-800 dark:text-white bg-red-400">
+        <p className="text-lg text-gray-800 dark:text-white ">
           
         {t("for ch.s text")}
         </p>

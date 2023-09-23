@@ -7,6 +7,10 @@ import Timeline from "../components/Timeline"
 import ContactForm from "../components/ContactForm"
 import { useTranslation } from "next-i18next"
 import Head from "../components/head"
+import Benefits from "../components/benefits"
+import About from "../components/about"
+import Card from "../components/card"
+import Forinvestor from "../components/forinvestor"
 
 const Home = () => {
   
@@ -19,18 +23,16 @@ const Home = () => {
       <Head/>
 
       <div id="about">
-        <SectionTitle title={t("abouttitle")}>{t("abouttext")}</SectionTitle>
+        <SectionTitle title={t("abouttitle")}>
+        <About/>
+        </SectionTitle>
       </div>
-      
       <div id="for e.v">
-        <SectionTitle title={t("for e.v title")}>{t("for e.v text")}</SectionTitle>
+        <SectionTitle title={t("for e.v title")}>
+          <Card/>
+        </SectionTitle>
       </div>
-      <div id="for ch.s">
-        <SectionTitle title={t("for ch.s title")}>{t("for ch.s text")}</SectionTitle>
-      </div>
-      <div id="for inestor">
-        <SectionTitle title={t("for inestor title")}>{t("for inestor text")}</SectionTitle>
-      </div>
+    <Forinvestor/>
 
       <div id="team">
         <Team />
@@ -42,7 +44,7 @@ const Home = () => {
         </div>
       </SectionTitle>
 
-      <div id="contact">
+      <div id="forum">
       <ContactForm />
       </div>
 

@@ -7,7 +7,7 @@ import { useTranslation } from "react-i18next"
 
 export default function Footer() {
   const navigation = ["about","for e.v","for ch.s","team", ]
-  const navigation2 = [ "for inestor","features", "contact",]
+  const navigation2 = [ "for inestor","features", "forum",]
   const { theme, setTheme } = useTheme()
   const { t } = useTranslation("common")
 

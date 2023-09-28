@@ -7,14 +7,19 @@ import Timeline from "../components/Timeline"
 import ContactForm from "../components/ContactForm"
 import { useTranslation } from "next-i18next"
 import Head from "../components/head"
-import Benefits from "../components/benefits"
 import About from "../components/about"
 import Card from "../components/card"
 import Forinvestor from "../components/forinvestor"
+import { useEffect } from "react";
+import { useRouter } from "next/router"; // Import the useRouter hook
 
 const Home = () => {
-  
-  const { t } = useTranslation("common")
+  const { t } = useTranslation("common");
+  const router = useRouter(); // Use the useRouter hook to access route information
+
+  useEffect(() => {
+    window.scrollTo(0, 0);
+  }, [router.asPath]); // Use router.asPath to track route changes
 
   return (
     <>
@@ -24,7 +29,7 @@ const Home = () => {
 
       <div id="about">
         <SectionTitle title={t("abouttitle")}>
-        <About/>
+          <About/>
         </SectionTitle>
       </div>
       <div id="for e.v">
@@ -32,20 +37,20 @@ const Home = () => {
           <Card/>
         </SectionTitle>
       </div>
-    <Forinvestor/>
+      <Forinvestor/>
 
       <div id="team">
         <Team />
       </div>
      
       <SectionTitle title={t("featurestitle")}>
-      <div id="features">
-        <Timeline />
+        <div id="features">
+          <Timeline />
         </div>
       </SectionTitle>
 
       <div id="forum">
-      <ContactForm />
+        <ContactForm />
       </div>
 
       <Footer />

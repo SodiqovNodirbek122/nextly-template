@@ -7,7 +7,7 @@ import Language from "./Language"
 import { useTranslation } from "next-i18next"
 
 const Navbar = () => {
-  const navigation = ["about","for e.v","for ch.s","for inestor","team", "features", "forum", ]
+  const navigation = ["about","for e.v","for ch.s","for investor","team", "features", "forum", ]
   const { theme, setTheme } = useTheme()
   const { t } = useTranslation()
   

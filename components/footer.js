@@ -6,8 +6,8 @@ import { useTheme } from "@emotion/react"
 import { useTranslation } from "react-i18next"
 
 export default function Footer() {
-  const navigation = ["about","for e.v","for ch.s","team", ]
-  const navigation2 = [ "for inestor","features", "forum",]
+  const navigation = ["about", "for e.v", "for ch.s", "team"]
+  const navigation2 = ["for inestor", "features", "forum"]
   const { theme, setTheme } = useTheme()
   const { t } = useTranslation("common")
 
@@ -17,7 +17,6 @@ export default function Footer() {
         <div className="grid max-w-screen-xl grid-cols-1 gap-10 pt-10 mx-auto mt-5 border-t border-gray-100 dark:border-trueGray-700 lg:grid-cols-5">
           <div className="lg:col-span-2">
             <div>
-              {" "}
               <Link
                 href="/"
                 className="flex items-center space-x-2 text-2xl font-medium text-voltiva-500 dark:text-gray-100"

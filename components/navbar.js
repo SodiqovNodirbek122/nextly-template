@@ -7,10 +7,17 @@ import Language from "./Language"
 import { useTranslation } from "next-i18next"
 
 const Navbar = () => {
-  const navigation = ["about","for e.v","for ch.s","for investor","team", "features", "forum", ]
+  const navigation = [
+    "about",
+    "for e.v",
+    "for ch.s",
+    "for investor",
+    "team",
+    "features",
+    "forum",
+  ]
   const { theme, setTheme } = useTheme()
   const { t } = useTranslation()
-  
 
   return (
     <div className="w-full sticky bg-white dark:bg-trueGray-600 top-0 z-[99999]">
@@ -19,7 +26,7 @@ const Navbar = () => {
           {({ open }) => (
             <>
               <div className="flex flex-wrap items-center justify-between w-full lg:w-auto">
-                <Link href="#">
+                <Link href="/">
                   <Image
                     src={`/img/${
                       theme === "dark" ? "logo-dark" : "voltiva"
@@ -72,7 +79,7 @@ const Navbar = () => {
               </div>
             </>
           )}
-        </Disclosure>  
+        </Disclosure>
         {/* menu  */}
         <div className="hidden text-center lg:flex lg:items-center">
           <ul className="items-center justify-end flex-1 pt-6 list-none lg:pt-0 lg:flex">

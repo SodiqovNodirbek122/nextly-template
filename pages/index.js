@@ -1,54 +1,46 @@
-import Navbar from "../components/navbar"
 import SectionTitle from "../components/sectionTitle"
 import { serverSideTranslations } from "next-i18next/serverSideTranslations"
-import Footer from "../components/footer"
 import Team from "../components/team"
 import Timeline from "../components/Timeline"
 import ContactForm from "../components/ContactForm"
 import { useTranslation } from "next-i18next"
 import Head from "../components/head"
-import Benefits from "../components/benefits"
 import About from "../components/about"
 import Card from "../components/card"
 import Forinvestor from "../components/forinvestor"
 
 const Home = () => {
-  
   const { t } = useTranslation("common")
 
   return (
     <>
-      <Navbar />
-
-      <Head/>
+      <Head />
 
       <div id="about">
         <SectionTitle title={t("abouttitle")}>
-        <About/>
+          <About />
         </SectionTitle>
       </div>
       <div id="for e.v">
         <SectionTitle title={t("for e.v title")}>
-          <Card/>
+          <Card />
         </SectionTitle>
       </div>
-    <Forinvestor/>
+      <Forinvestor />
 
       <div id="team">
         <Team />
       </div>
-     
+
       <SectionTitle title={t("featurestitle")}>
-      <div id="features">
-        <Timeline />
+        <div id="features">
+          <Timeline />
         </div>
       </SectionTitle>
 
       <div id="forum">
-      <ContactForm />
+        <ContactForm />
       </div>
-
-      <Footer />
     </>
   )
 }

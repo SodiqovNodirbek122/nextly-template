@@ -8,20 +8,16 @@ import Head from "../components/head"
 import About from "../components/about"
 import Card from "../components/card"
 import Forinvestor from "../components/forinvestor"
-import { useEffect } from "react";
-import { useRouter } from "next/router"; // Import the useRouter hook
+import { useEffect } from "react"
+import { useRouter } from "next/router" // Import the useRouter hook
 
 const Home = () => {
-<<<<<<< HEAD
   const { t } = useTranslation("common")
-=======
-  const { t } = useTranslation("common");
-  const router = useRouter(); // Use the useRouter hook to access route information
+  const router = useRouter() // Use the useRouter hook to access route information
 
   useEffect(() => {
-    window.scrollTo(0, 0);
-  }, [router.asPath]); // Use router.asPath to track route changes
->>>>>>> 8c1e2cab890987aef2e77e7bbb34d72a321396a6
+    window.scrollTo(0, 0)
+  }, [router.asPath]) // Use router.asPath to track route changes
 
   return (
     <>
@@ -29,11 +25,7 @@ const Home = () => {
 
       <div id="about">
         <SectionTitle title={t("abouttitle")}>
-<<<<<<< HEAD
           <About />
-=======
-          <About/>
->>>>>>> 8c1e2cab890987aef2e77e7bbb34d72a321396a6
         </SectionTitle>
       </div>
       <div id="for e.v">
@@ -41,11 +33,7 @@ const Home = () => {
           <Card />
         </SectionTitle>
       </div>
-<<<<<<< HEAD
       <Forinvestor />
-=======
-      <Forinvestor/>
->>>>>>> 8c1e2cab890987aef2e77e7bbb34d72a321396a6
 
       <div id="team">
         <Team />
